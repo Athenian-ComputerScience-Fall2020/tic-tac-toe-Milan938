@@ -9,6 +9,25 @@ def tictactoe(board):
     print('--+--+--')
     print(board['BL'] + '|' + board['BM'] + '|' + board["BR"])
 
+def winner(ttt):
+    if ttt['TL'] == ttt['TM'] == ttt['TR'] == "X" or ttt['TL'] == ttt['TM'] == ttt['TR'] == "O":
+        print("Congrats, you won!")
+    elif ttt['ML'] == ttt['MM'] == ttt['MR'] == "X" or ttt['ML'] == ttt['MM'] == ttt['MR'] == "O":
+        print("Congrats, you won")
+    elif ttt['BL'] == ttt["BM"] == ttt['BR'] == "X" or ttt['BL'] == ttt["BM"] == ttt['BR'] == "O":
+        print("Congrats, you won")
+    elif ttt['TL'] == ttt['ML'] == ttt['BL'] == "X" or ttt['TL'] == ttt['ML'] == ttt['BL'] == "O":
+        print("Congrats, you won")
+    elif ttt['TM'] == ttt['MM'] == ttt['BM'] == "X" or ttt['TM'] == ttt['MM'] == ttt['BM'] == "O":
+        print("Congrats, you won")
+    elif ttt['TR'] == ttt['MR'] == ttt['BR'] == "X" or ttt['TR'] == ttt['MR'] == ttt['BR'] == "O":
+        print("Congrats, you won")
+    elif ttt['TL'] == ttt['MM'] == ttt['BR'] == "X" or ttt['TL'] == ttt['MM'] == ttt['BR'] == "O":
+        print("Congrats, you won")
+    elif ttt['TR'] == ttt['MM'] == ttt['BL'] == "X" or ttt['TR'] == ttt['MM'] == ttt['BL'] == "O":
+        print("Congrats, you won")
+        
+
 
 ttt = {'TL': ' ', 'TM': ' ', 'TR': ' ', 'ML': ' ', 'MM': ' ', 'MR': ' ', 'BL': ' ', 'BM': ' ', 'BR': ' '}
 
@@ -22,51 +41,58 @@ while x <= 9:
         choice1 = input()
         ttt['TL'] = choice1
         x = x + 1 
+        winner(ttt)
     elif selection == 'TM':
         print("Would you like to place an X or O there?")
         choice2 = input()
         ttt.update({'TM': choice2})
         x = x + 1
-
+        winner(ttt)
     elif selection == 'TR':
         print("Would you like to place an X or O there?")
         choice3 = input()
         ttt.update({'TM': choice3})
         x = x + 1
+        winner(ttt)
     elif selection == 'ML':
         print("Would you like to place an X or O there?")
         choice4 = input()
         ttt.update({'TM': choice4})
         x = x + 1
+        winner(ttt)
     elif selection == 'MM':
         print("Would you like to place an X or O there?")
         choice5 = input()
         ttt.update({'TM': choice5})
         x = x + 1
+        winner(ttt)
     elif selection == 'MR':
         print("Would you like to place an X or O there?")
         choice6 = input()
         ttt.update({'TM': choice6})
         x = x + 1
+        winner(ttt)
     elif selection == 'BL':
         print("Would you like to place an X or O there?")
         choice7 = input()
         ttt.update({'TM': choice7})
         x = x + 1
+        winner(ttt)
     elif selection == 'BM':
         print("Would you like to place an X or O there?")
         choice8 = input()
         ttt.update({'TM': choice8})
         x = x + 1
+        winner(ttt)
     elif selection == 'BR':
         print("Would you like to place an X or O there?")
         choice9 = input()
         ttt.update({'TM': choice9})
         x = x + 1
+        winner(ttt)
 
-if ttt['TL'] == ttt['TM'] == ttt['TR'] or ttt['ML'] == ttt['MM'] == ttt['MR'] or ttt['BL'] == ttt["BM"] == ttt['BR'] or ttt['TL'] == ttt['ML'] == ttt['BL'] or ttt['TM'] == ttt['MM'] == ttt['BM'] or ttt['TR'] == ttt['MR'] == ttt['BR'] or ttt['TL'] == ttt['MM'] == ttt['BR'] or ttt['TR'] == ttt['MM'] == ttt['BL']:
-    print("Congrats, you won!")
-elif x == 9:
+
+if x == 9:
     print("No one won:( ")
 tictactoe(ttt)
 
