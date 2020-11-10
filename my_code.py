@@ -1,6 +1,11 @@
 # Collaborators (including web sites where you got help: (enter none if you didn't need help)
 # Megan 
 # A note on style: Dictionaries can be defined before or after functions.
+print("Use two letter abreviations to place your piece. Type the letter"
+      "of the row first, T for top, M for middle, B for bottom. "
+      "Then put where in the row you want your piece. "
+      "R for right, M for middle, L for left. For example,"
+      "if you want to play the top left square, write TL when asked.")
 
 def tictactoe(board):
     print(board['TL'] + ' |' + board['TM'] + ' |' + board["TR"])
